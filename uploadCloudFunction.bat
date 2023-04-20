@@ -1,0 +1,1 @@
+"A:\WeChatDevelop\微信web开发者工具\cli.bat" cloud functions deploy --e cloud1-7gt6wjoza178c3f9 --n quickstartFunctions --r --project "A:\WeChatProject\Test" --report_first --report

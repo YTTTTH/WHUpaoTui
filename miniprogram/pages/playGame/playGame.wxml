@@ -1,0 +1,30 @@
+
+<view class="body">
+    <view class="item">
+        <text>游玩项目: </text>
+        <input type="text" placeholder="请输入你想一起玩的项目" value="{{ gameName }}" bindinput="getGameName" />
+    </view>
+    <view class="item">
+        <text>游玩时间: </text>
+        <input type="text" placeholder="请输入游玩时间" value="{{ gameTime }}" bindinput="getGameTime"  />
+    </view>
+    <view class="help_content">
+        <text>备注信息: </text>
+        <textarea placeholder="请输入详细信息，例如时间地点" cols="30" rows="10" value="{{ remark }}" bindinput="getRemark"></textarea>
+    </view>
+    <!-- <view class="item">
+        <text>游戏ID: </text>
+        <input type="text" placeholder="输入游戏ID或游戏账号" value="{{ gameID }}" bindinput="getGameID" />
+    </view> -->
+    <view class="item">
+        <text>金额: </text>
+        <input type="text" placeholder="输入金额" value="{{ money }}" bindinput="getMoney" />
+    </view>
+
+    <view class="tips">
+        <text>需支付</text>
+        <text>{{ money }}元</text>
+    </view>
+
+    <button class="submitBtn" bindtap="submit">立即发布</button>
+</view>

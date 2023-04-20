@@ -1,0 +1,168 @@
+<scroll-view scroll-x class="scroll_view">
+  <view class="tab">
+    <view class="tab_view {{tabNow===index ? 'select': ''}} " wx:for="{{tabList}}" data-id="{{index}}" wx:key="index" bindtap="selectTab">
+      {{item}}
+    </view>
+  </view>
+</scroll-view>
+
+<view wx:if="{{tabNow===0}}" class="body">
+  <!-- <view class="tips">
+    向上拖动更新信息
+ r </view> -->
+
+  <view class="order" wx:for="{{orderList}}" wx:key="index" >
+    <view class="order_top">
+      <view class="top_left">
+        <image src="{{item.userInfo.avatarUrl}}"/>
+        <view class="name">
+          <text>{{item.name}}</text>
+          <text>{{item.time}}</text>
+        </view>
+      </view>
+
+      <view class="{{ item.stateColor }}">
+        {{ item.state }}
+      </view>
+    </view>
+
+    <view class="order_content">
+      <view class="content">
+        {{item.info}}
+      </view>
+    
+      <view class="address">
+        {{item.state==='待接单'?'目的地：'+item.address:'订单已完成，相关信息已隐藏'}}
+        
+      </view>
+    </view>
+
+    <view class="order_bottom">
+      <view class="money">
+        金额：{{item.money}}
+      </view>
+
+      <view class="accept" wx:if="{{item.state==='待接单'}}" bindtap="orderReceive" data-item="{{item}}">
+        接单
+      </view>
+    </view>
+  </view>
+</view>
+
+<view wx:if="{{tabNow===1&&isLogin}}" class="body">
+
+  <!-- <view class="tips">
+        向上拖动更新信息
+    </view> -->
+    <view class="order" wx:for="{{ myOrder }}" wx:key="index">
+        <view class="order_top">
+            <view class="top_left">
+                <image src="{{ item.userInfo.avatarUrl }}"></image>
+                <view class="name">
+                    <text>{{ item.name }}</text>
+                    <text>{{ item.time }}</text>
+                </view>
+            </view>
+            <view class="{{ item.stateColor }}">
+                {{ item.state }}
+            </view>
+        </view>
+        <view class="order_content">
+            <view class="content">
+                {{ item.info }}
+            </view>
+            <view class="address">
+                {{  '目的地：' + item.address  }}
+            </view>
+            <view class="address" wx:if="{{ openid === item.receivePerson }}">
+                {{ item.state === '已接单' && item.name === '快递代取'  ? '取件码:' + item.expressCode : '' }}
+            </view>
+            <view class="address" >
+                {{ item.state === '已接单' ? '接单人联系方式：' + item.receivePersonPhone : '' }}
+            </view>
+        </view>
+        <view class="order_bottom">
+            
+            <button wx:if="{{ item.codeImg }}" size="mini" type="primary" bindtap="showCodeImg" data-item="{{ item }}">取件码</button>
+
+            <view class="money">
+                金额 {{ item.money }}
+            </view>
+            <view class="accept" wx:if="{{ item.state === '已接单' }}" bindtap="toFinish" data-item="{{ item }}">
+                已完成
+            </view>
+        </view>
+    </view>
+    
+</view>
+
+
+<view wx:if="{{ tabNow === 2 &&isLogin}}" class="body">
+   
+    <view class="order" wx:for="{{ helpOrder }}" wx:key="index" bindtap="detailInfo" data-detail_info="{{item}}">
+        <view class="order_top">
+            <view class="top_left">
+                <image src="{{ item.userInfo.avatarUrl }}"></image>
+                <view class="name">
+                    <text>{{ item.name }}</text>
+                    <text>{{ item.time }}</text>
+                </view>
+            </view>
+            <view class="{{ item.stateColor }}">
+                {{ item.state }}
+            </view>
+        </view>
+        <view class="order_content">
+            <view class="content">
+                {{ item.showInfo }} 
+            </view>
+            <view class="address">
+                {{ item.state !== '已完成' ? '目的地：' + item.address : '订单已完成，相关信息已隐藏' }}
+            </view>
+
+            <view class="address" >
+                {{ item.state === '已接单' ? '订单人联系方式：' + item.phone : '' }}
+            </view>
+        </view>
+        <view class="order_bottom">
+            <view class="money">
+                金额 {{ item.money }}
+            </view>
+        </view>
+    </view>
+  
+</view>
+
+<view wx:if="{{ tabNow === 3 }}" class="body">
+    
+    <view class="order" wx:for="{{ rewardOrder }}" wx:key="index">
+        <view class="order_top">
+            <view class="top_left">
+                <image src="{{ item.userInfo.avatarUrl }}"></image>
+                <view class="name">
+                    <text>{{ item.name }}</text>
+                    <text>{{ item.time }}</text>
+                </view>
+            </view>
+            <view class="{{ item.stateColor }}">
+                {{ item.state }}
+            </view>
+        </view>
+        <view class="order_content">
+            <view class="content">
+                {{ item.info }}
+            </view>
+            <view class="address">
+                {{ item.state === '待接单' ? '目的地：' + item.address : '订单已完成，相关信息已隐藏' }}
+            </view>
+        </view>
+        <view class="order_bottom">
+            <view class="money">
+                金额 {{ item.money }}
+            </view>
+            <view class="accept" wx:if="{{ item.state === '待接单' }}" bindtap="orderReceive" data-item="{{ item }}">
+                接单
+            </view>
+        </view>
+    </view>
+</view>

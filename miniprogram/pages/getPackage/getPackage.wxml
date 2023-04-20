@@ -1,0 +1,46 @@
+<view class="container">
+  <view class="title">快递大小</view>
+  <view class="type">
+    <view class="{{typeNow===index?'selectType':''}}" wx:for="{{typeList}}" wx:key="index" bindtap="selectType" data-id="{{index}}" data-tip="{{item.tips}}">{{item.name}}
+    </view>
+  </view>
+  <view class="address">
+    <text>收件地址:</text>
+    <text bindtap="selectAddress" >{{address?address:'请选择地址  >'}}</text>
+  </view>
+
+  <view class="address">
+    <text>快递商家：</text>
+    <text bindtap="selectBusiness">{{ business ? business : '请选择快递点 >' }}</text>
+    <!-- <text>请选择快递点 ></text> -->
+    <!-- <picker bindchange="bindBusinessChange" value="{{businessIndex}}" range="{{businessArray}}">
+      <text style="color:#a1a1a1">
+        {{selectBusiness?businessArray[businessIndex]:'请选择快递点 >'}}
+      </text>
+    </picker> -->
+  </view>
+
+  <view class="address">
+    <text>取件信息:</text>
+  </view>
+
+  <view class="getCode">
+    <textarea class="content" cols="30" rows="10" placeholder="输入取件码或其他信息" value="{{ expressCode }}" bindinput="getExpressCode"/>
+
+    <!-- <image class="expressCode" src="{{ codeImg }}"></image>
+    <image class="getImg" src="{{ codeImg ? '../../images/image_fill.png' : '../../images/image.png' }}" bindtap="getCode"></image> -->
+  </view>
+
+  <view class="address">
+    <text>备注信息:</text>
+    <input type="text" placeholder="此信息所有人可见" value="{{ remark }}" bindinput="getRemark"/>
+  </view>
+
+  <view class="bottom_tips">
+    <text>需支付</text>
+    <text>{{money}} 元</text>
+  </view>
+
+  <button class="submit" bindtap="submit">立即发布</button>
+
+</view>

@@ -1,0 +1,68 @@
+.banner_body,.banner_item,.banner_item image{
+  width: 100%;
+}
+.notice{
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  margin-top: 20rpx;
+  padding: 5rpx 15rpx;
+}
+.notice image{
+  width: 60rpx;
+  height: 60rpx;
+  
+}
+.notice text{
+  font-size: 20rpx;
+}
+
+.container{
+  margin: 40rpx;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.container .body{
+  width: 180rpx;
+  height: 160rpx;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin: 20rpx;
+  border-radius: 20rpx;
+}
+.container .body .icon{
+  width: 100rpx;
+  height: 100rpx;
+  background-color: #FFC0CB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.container .body .circleBorder{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 110rpx;
+  height: 110rpx;
+  position: absolute;
+  top: -40rpx;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 0 10rpx 10rpx #f3f3f3;
+}
+.container .body .circleBorder .icon image{
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.container .body  .text{
+  margin-top: 80rpx;
+  color: #FFC0CB;
+}

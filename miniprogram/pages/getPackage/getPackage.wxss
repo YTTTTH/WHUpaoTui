@@ -1,0 +1,108 @@
+.container{
+  background-color: #fff;
+  width: 90%;
+  margin: 30rpx auto;
+  border-radius:30rpx ;
+  box-shadow: 0 0 15rpx #a1a1a1;
+  padding: 40rpx 25rpx 25rpx 25rpx; 
+}
+
+.container .title{
+  text-align: center;
+}
+
+.container .type{
+  display: flex;
+  margin: 0 auto;
+  width: 90%;
+  margin-top: 20rpx; 
+  border-bottom: 2rpx solid #d1d1d1;
+  padding-bottom: 30rpx;
+  display: flex;
+  justify-content: center;
+}
+
+.container .type view{
+  border: 1rpx solid #d1d1d1;
+  padding: 20rpx 60rpx; 
+  color: #a1a1a1;
+}
+
+.container .address{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  padding-bottom: 30rpx;
+  border-bottom: 2rpx solid #d1d1d1;
+}
+
+.container .address input{
+  text-align: right;
+}
+
+.container .address text:nth-child(2){
+  color: #a1a1a1;
+}
+
+.selectType{
+  color:#FFC0CB !important;
+  border-color: #FFC0CB !important;
+}
+
+.container .getCode{
+  margin-top: 20rpx;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.container .getCode .content{
+  border: 2rpx solid #d1d1d1;
+  padding: 20rpx;
+  width: 85%;
+}
+
+.container .getCode .getImg {
+  width: 60rpx;
+  height: 60rpx;
+  position: absolute;
+  bottom: 60rpx;
+  right: 80rpx;
+  z-index: 10;
+}
+
+.container .getCode .expressCode {
+  width: 80rpx;
+  height: 100rpx;
+  position: absolute;
+  left: 80rpx;
+  bottom: 60rpx;
+}
+
+
+.container .bottom_tips{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.container .bottom_tips text{
+  margin-top: 20rpx;
+}
+
+.container .bottom_tips text:nth-child(2){
+  color: red;
+}
+
+.container .submit{
+  width: 90%;
+  background-color: #FFC0CB;
+  color:#fff;
+  border-radius: 40rpx;
+  padding: 20rpx 0;
+  margin-top: 70rpx;
+}
+
